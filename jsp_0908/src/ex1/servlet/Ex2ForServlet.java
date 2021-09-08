@@ -28,15 +28,15 @@ public class Ex2ForServlet extends HttpServlet {
 		request.setCharacterEncoding("euc-kr");
 		PrintWriter out = response.getWriter();
 		try {
-			
-			
 			int num=Integer.parseInt(request.getParameter("num"));
+			String msg = request.getParameter("msg");
 			System.out.println("num"+num);
+			System.out.println("msg"+msg);
 			String res = model.mymakeTableTag(num);
-
-			
-			out.println("<h1>for문에제</h1>");
+			String res1 = model.mymakeTableTag2(1, msg);
+			out.println("<h1>for문예제</h1>");
 			out.println(res);
+			out.println(res1);
 		} catch (Exception e) {
 			out.println("정수로 입력하세요");
 			out.println("<a href='form2.html'>이전</a>");

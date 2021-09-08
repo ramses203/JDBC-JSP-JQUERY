@@ -4,29 +4,32 @@
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 <style type="text/css">
-#wrap { width: 250px; margin: auto;}
+#wrap {
+	width: 250px;
+	margin: auto;
+}
 </style>
 </head>
 <body>
-	<div>
-		<form action="ex3FormProc" method="post">//메서드를 적어주지 않아 오루가났음
-		<fieldset>
-			<legend>//legend를 p태그 밑에 작성해서 오류가남
-			폼테스트
-			</legend>
-			<p>
-			<input type="number" name="num1">
-			<select name="oper">
-				<option value="+">+</option>
-				<option value="*">x</option>
-				<option value="/">/</option>
-				<option value="-">-</option>
-			</select>
-			<input type="number" name="num2">
-			<input type="submit" value="연산하기">
-			</p>				
-			
-		</fieldset>
+	<div id="wrap">
+		<form action="ex3FormProc" method="post">
+			//action과 method를 적어주지 않아 오류가났음 
+			//ctrl+spacebar를 이용하면 빠르게 작성할수있음
+			<fieldset>
+				<legend>//legend를 p태그 밑에 작성해서 오류가남 (이부분에는 타이틀을 적는곳이다). 
+				사칙연산프로그램 
+				</legend>
+				<p>
+					<input type="number" name="num1"> <select name="oper">
+						<option value="+">+</option>
+						<option value="*">x</option>
+						<option value="/">/</option>
+						<option value="-">-</option>
+					</select> <input type="number" name="num2"> 
+					<input type="submit" value="연산하기">
+				</p>
+
+			</fieldset>
 		</form>
 	</div>
 

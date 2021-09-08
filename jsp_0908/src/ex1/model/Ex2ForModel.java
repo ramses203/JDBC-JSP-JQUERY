@@ -2,6 +2,7 @@ package ex1.model;
 
 public class Ex2ForModel {
 
+	
 	public String mymakeTableTag(int num) {
 		StringBuilder sb = new StringBuilder();
 		sb.append("<table style='width:100px;'>");
@@ -11,7 +12,9 @@ public class Ex2ForModel {
 		sb.append("</table>");
 		return sb.toString();
 		}
-	public String mymakeTableTag(int num, String msg) {
+	
+	
+	public String mymakeTableTag2(int num, String msg) {
 		StringBuilder sb = new StringBuilder();
 		sb.append("<table style='width:100px;'>");
 		for(int i=0; i<num; i++) {
