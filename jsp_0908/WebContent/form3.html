@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+#wrap { width: 250px; margin: auto;}
+</style>
+</head>
+<body>
+	<div>
+		<form action="ex3FormProc" method="post">//메서드를 적어주지 않아 오루가났음
+		<fieldset>
+			<legend>//legend를 p태그 밑에 작성해서 오류가남
+			폼테스트
+			</legend>
+			<p>
+			<input type="number" name="num1">
+			<select name="oper">
+				<option value="+">+</option>
+				<option value="*">x</option>
+				<option value="/">/</option>
+				<option value="-">-</option>
+			</select>
+			<input type="number" name="num2">
+			<input type="submit" value="연산하기">
+			</p>				
+			
+		</fieldset>
+		</form>
+	</div>
+
+
+</body>
+</html>

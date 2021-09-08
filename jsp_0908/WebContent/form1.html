@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>form.html</title>
+
+
+</head>
+<body>
+
+<h1>폼 태그 속성 Demo</h1>
+<form action="ex1formdemo" method="post">
+
+아이디: <input type="text" name="id" id="id"> <br>
+비밀번호: <input type="password" name="pwd" id="pwd"> <br>
+나이 : <input type="number" name="age" id="age" min="19" max="200" value="19"> <br>
+이름: <input type="text" name="name" id="name"> <br>
+좋아하는 색상 : <input type="color" name="mycol" id="mycol"> <br>
+선호 url : <input type="url" name="website" id="website" list="weblist"> <br>
+<datalist id="weblist">
+<option value="http://www.google.co.kr" label="Google">
+<option value="http://www.ikosmo.co.kr" label="IKosme">
+<option value="http://www.naver.com" label="Naver">
+</datalist>
+
+좋아하는 날짜1: <input type="date" name="mydata1" id="mydate1"> <br>
+좋아하는 날짜2: <input type="datetime-Local" name="mydata2" id="mydate2"> <br>
+좋아하는 날짜3: <input type="week" name="mydata3" id="mydate3"> <br>
+좋아하는 시간1: <input type="time" name="mytime" id="mytime"> <br>
+<input type="submit" value="전송"> <input type="reset" value="작성취소"> 
+
+</form>
+
+
+</body>
+</html>
