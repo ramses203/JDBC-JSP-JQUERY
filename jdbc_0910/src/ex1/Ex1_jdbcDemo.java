@@ -15,7 +15,9 @@ public class Ex1_jdbcDemo {
 			e.printStackTrace();
 		}
 	}
+	//String id, String pwd, String name, int age
 	public void inserDemo(String id, String pwd, String name, int age) {
+		//? 1부터 시작되어서 바인딩 된다.
 		StringBuilder sb = new StringBuilder();
 		sb.append("insert into member values(");
 		sb.append("member_seq.nextVal,?,?,?,?,sysdate)");
@@ -69,7 +71,7 @@ public class Ex1_jdbcDemo {
 		Scanner sc = new Scanner(System.in);
 		Ex1_jdbcDemo ref = new Ex1_jdbcDemo();
 		ext: while(true) {
-			System.out.println("Menu1:입력, Menu2:출력, Munu3:종료 =>");
+			System.out.println("Menu1:입력, Menu2:출력, Menu3:종료 =>");
 			String menu = sc.nextLine();
 			switch (menu) {
 			case "1":
@@ -80,7 +82,7 @@ public class Ex1_jdbcDemo {
 				System.out.println("출력 모드");
 				break;
 			case "3":
-				System.out.println("종료");
+				System.out.println("종료 모드");
 				break ext;
 
 			default:
@@ -92,3 +94,4 @@ public class Ex1_jdbcDemo {
 		
 	}
 }
+
