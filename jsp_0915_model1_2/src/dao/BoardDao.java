@@ -134,7 +134,7 @@ public class BoardDao {
 	
 	
 	// update board set title=? , writer=?, content=?, pwd=? where no=?
-
+	// 업데이트 기능
 	public void update(BoardDTO vo) {
 		StringBuffer sql = new StringBuffer();
 		sql.append("update board ");
@@ -145,10 +145,10 @@ public class BoardDao {
 		try {
 			con = ConnUtil.getConnection();
 			pstmt = con.prepareStatement(sql.toString());
-			pstmt.setString(1, "title");
-			pstmt.setString(2, "writer");
-			pstmt.setString(3, "content");
-			pstmt.setString(4, "pwd");
+			pstmt.setString(1, vo.getTitle());
+			pstmt.setString(2, vo.getWriter());
+			pstmt.setString(3, vo.getContent());
+			pstmt.setString(4, vo.getPwd());
 			pstmt.setInt(5, vo.getNo());
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
@@ -157,7 +157,26 @@ public class BoardDao {
 			try {if(pstmt != null)pstmt.close();} catch (SQLException e) {}
 			try {if(con != null)con.close();} catch (SQLException e) {}
 		}
-	} 
+	}
+	
+	public void delete(int no) {
+		StringBuffer sql = new StringBuffer();
+		sql.append("delete from board ");
+		sql.append("where no = ?");
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		try {
+			con = ConnUtil.getConnection();
+			pstmt = con.prepareStatement(sql.toString());
+			pstmt.setInt(1, no);
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {if(pstmt != null)pstmt.close();} catch (SQLException e) {}
+			try {if(con != null)con.close();} catch (SQLException e) {}
+		}
+	}
 }
 
 
