@@ -74,5 +74,44 @@ input[type=submit]:hover {
 <body>
 
 
+
+<div class="row">
+<div class="col-25"> 
+<label for="title">제목</label>
+</div>
+<div class="col-75">
+<input type="text" id="title" name="title" placeholder="Title" >
+</div>
+</div>
+
+
+<div class="row">
+<div class="col-25"> 
+<label for="writer">작성자</label>
+</div>
+<div class="col-75">
+<input type="text" id="writer" name="writer" placeholder="Writer" >
+</div>
+</div>
+
+<div class="row">
+<div class="col-25"> 
+<label for="content">내용</label>
+</div>
+<div class="col-75">
+<input type="text" id="content" name="content" placeholder="Content" >
+</div>
+</div>
+
+<div class="row">
+<div class="col-25"> 
+<label for="pwd">비밀번호</label>
+</div>
+<div class="col-75">
+<input type="text" id="pwd" name="pwd" placeholder="pwd" >
+</div>
+</div>
+
+
 </body>
 </html>
