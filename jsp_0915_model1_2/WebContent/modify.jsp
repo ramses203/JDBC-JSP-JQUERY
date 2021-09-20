@@ -1,5 +1,12 @@
+<%@page import="dao.BoardDao"%>
+<%@page import="dto.BoardDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+    
+    <%
+    	int no = Integer.parseInt(request.getParameter("no"));
+    	BoardDTO vo = BoardDao.getDao().info(no);
+    %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -75,16 +82,15 @@ input[type=submit]:hover {
 
 <div style="width: 800px; margin: auto">
 <div class="container">
-<form action="insert.jsp">
-
-
+<form action="update.jsp" method="post">
+<input type="hidden" name="no" value="<%=no%>">
 
 <div class="row">
 <div class="col-25"> 
 <label for="title">제목</label>
 </div>
 <div class="col-75">
-<input type="text" id="title" name="title" placeholder="Title" >
+<input type="text" id="title" name="title" value="<%=vo.getTitle()%>">
 </div>
 </div>
 
@@ -94,7 +100,7 @@ input[type=submit]:hover {
 <label for="writer">작성자</label>
 </div>
 <div class="col-75">
-<input type="text" id="writer" name="writer" placeholder="Writer" >
+<input type="text" id="writer" name="writer" value="<%=vo.getWriter()%>">
 </div>
 </div>
 
@@ -103,8 +109,7 @@ input[type=submit]:hover {
 <label for="content">내용</label>
 </div>
 <div class="col-75">
-<textarea id="content" name="content" 
-style="height: 200px" placeholder="Write Content ......" ></textarea>
+<textarea id="content" name="content" style="height: 200px"><%=vo.getContent()%></textarea>
 </div>
 </div>
 
@@ -113,7 +118,7 @@ style="height: 200px" placeholder="Write Content ......" ></textarea>
 <label for="pwd">비밀번호</label>
 </div>
 <div class="col-75">
-<input type="text" id="pwd" name="pwd" placeholder="pwd" >
+<input type="text" id="pwd" name="pwd" value="<%=vo.getPwd()%>">
 </div>
 </div>
 

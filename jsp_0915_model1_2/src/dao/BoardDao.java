@@ -22,7 +22,7 @@ public class BoardDao {
 	public void insert(BoardDTO vo) {
 		StringBuilder sql = new StringBuilder();
 		sql.append("insert into board ");
-		sql.append("value(board_seq.nextval,?,?,?,?,0,sysdate)");
+		sql.append("values(board_seq.nextval,?,?,?,?,0,sysdate)");
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		
@@ -32,13 +32,13 @@ public class BoardDao {
 			pstmt.setString(1, vo.getTitle());
 			pstmt.setString(2, vo.getWriter());
 			pstmt.setString(3, vo.getContent());
-			pstmt.setString(5, vo.getPwd());
+			pstmt.setString(4, vo.getPwd());
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
-			try {if(pstmt != null)pstmt.close();} catch (Exception e) {}
-			try {if(con != null)con.close();} catch (Exception e) {}
+			try {if(pstmt != null)pstmt.close();} catch (SQLException e) {}
+			try {if(con != null)con.close();} catch (SQLException e) {}
 		}
 		
 	}
@@ -101,7 +101,7 @@ public class BoardDao {
 	
 	public BoardDTO info(int no) {
 		StringBuffer sql = new StringBuffer();
-		sql.append("select no,title,writer, content, pwd, hit, regdate ");
+		sql.append("select no,title, writer, content, pwd, hit, regdate ");
 		sql.append("from board ");
 		sql.append("where no = ? ");
 		Connection con = null;
