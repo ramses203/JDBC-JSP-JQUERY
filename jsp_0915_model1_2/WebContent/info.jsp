@@ -84,6 +84,9 @@ input[type=submit]:hover {
 <div style="width: 800px; margin: auto;">
 <div class="container">
 
+<div>
+<h1>작성된 글 상세보기</h1>
+</div>
 
 <div class="row">
 <div class="col-25">
@@ -122,8 +125,8 @@ input[type=submit]:hover {
 </div>
 
 <div class="row" style="text-align: center">
-<input type="button" value="수정" onclick="goUrl('modify.jsp?no='<%=vo.getNo()%>)">&nbsp;
-<input type="button" value="삭제" onclick="goUrl('delete.jsp?no='<%=vo.getNo()%>)">&nbsp;
+<input type="button" value="수정" name="수정" onclick="goUrl('pwdcheckform.jsp?no=<%=vo.getNo()%>')">&nbsp;
+<input type="button" value="삭제" name="삭제" onclick="goUrl('pwdcheckform2.jsp?no=<%=vo.getNo()%>')">&nbsp;
 <input type="button" value="리스트" onclick="goUrl('list.jsp?')">&nbsp;
 </div>
 

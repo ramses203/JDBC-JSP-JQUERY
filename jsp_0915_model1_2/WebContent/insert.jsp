@@ -10,7 +10,7 @@
 	vo.setTitle(request.getParameter("title"));
 	vo.setWriter(request.getParameter("writer"));
 	vo.setContent(request.getParameter("content"));
-	vo.setContent(request.getParameter("pwd"));
+	vo.setPwd(request.getParameter("pwd"));
 	dao.insert(vo);
 	
 	response.sendRedirect("list.jsp");

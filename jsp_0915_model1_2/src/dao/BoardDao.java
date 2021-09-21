@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import javax.security.auth.message.callback.PrivateKeyCallback.Request;
+
 import conn.ConnUtil;
 import dto.BoardDTO;
 
@@ -177,12 +179,39 @@ public class BoardDao {
 			try {if(con != null)con.close();} catch (SQLException e) {}
 		}
 	}
+	// 
+	public String check (int no) {
+		StringBuilder sb = new StringBuilder();
+		sb.append("select pwd from board ");
+		sb.append("where no = ?");
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		BoardDTO vo = null;
+		try {
+			con = ConnUtil.getConnection();
+			pstmt = con.prepareStatement(sb.toString());
+			pstmt.setInt(1, no);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+			vo = new BoardDTO();
+			vo.setPwd(rs.getString("pwd"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {if(rs != null)rs.close();} catch (SQLException e) {}
+			try {if(pstmt != null)pstmt.close();} catch (SQLException e) {}
+			try {if(con != null)con.close();} catch (SQLException e) {}
+		
+	}
+	return vo.getPwd();
 }
 
 
 
 
-
+}
 
 
 

@@ -82,8 +82,11 @@ input[type=submit]:hover {
 
 <div style="width: 800px; margin: auto">
 <div class="container">
+<div>
+<h1>수정 페이지</h1>
+</div>
 <form action="update.jsp" method="post">
-<input type="hidden" name="no" value="<%=no%>">
+<input type="hidden" name="no" value="<%=vo.getNo()%>">
 
 <div class="row">
 <div class="col-25"> 

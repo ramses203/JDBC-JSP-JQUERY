@@ -36,6 +36,9 @@
 </head>
 <body>
 <div style="width: 600px; margin: auto">
+<div>
+<h1>작성된 글 리스트</h1>
+</div>
 <table id="customers">
 <tr>
 <th>번호</th><th>제목</th><th>작성자</th><th>조회수</th><th>날짜</th>
