@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="mem">
+  <insert id="add" parameterType="dto.Member2DTO">
+  insert into member2 values(member2_seq.nextVal, #{id}, #{pwd}, #{name}, #{email}, #{age}, sysdate)
+  </insert>
+  <select id="list" resultType="dto.Member2DTO">
+  select num,id,name,mdate from member2 order by 1 desc
+  </select>
+   <delete id="del" parameterType="int">
+   delete from member2 where num=#{num}
+   </delete>
+   <select id="sel" parameterType="int" resultType="dto.Member2DTO">
+   select num,id,name,email,age,mdate from member2 where num = #{num}
+   </select>
+   
+  </mapper>
+  
