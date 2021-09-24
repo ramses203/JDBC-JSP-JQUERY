@@ -18,24 +18,22 @@
 				<th>name</th>
 				<th>mdate</th>
 			</tr>
-			<%
-				//Dao를 생성해서 
-			List<Member2DTO> list = Member2Dao.getDao().listMember();
-			for (Member2DTO e : list) {
-			%>
-
+<%
+	//Dao를 생성해서 
+	int num = Integer.parseInt(request.getParameter("Num"));
+	Member2DTO vo = Member2Dao.getDao().selectOne(num);
+%>
 			<tr>
-				<th><%=e.getName()%></th>
-				<th><a href="memberDetail.jsp?Num=<%=e.getNum()%>"><%=e.getNum()%></a></th>
-				<th><%=e.getName()%></th>
-				<th><a href="memberDel.jsp?Num=<%=e.getNum()%>">삭제</a></th>
+				<th><%=vo.getNum() %></th>
+				<th><%=vo.getId() %></th>
+				<th><%=vo.getName() %></th>
+				<th><%=vo.getMdate() %></th>
 			</tr>
-
-			<%
-				}
-			%>
-
-		</table>
+		
+	</table>
+	<a href="memberList.jsp"><input type="button" value="리스트"></a> 
 	</div>
+	
+	
 </body>
 </html>

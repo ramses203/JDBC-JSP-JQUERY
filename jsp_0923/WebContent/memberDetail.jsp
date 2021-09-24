@@ -20,8 +20,8 @@
 			</tr>
 <%
 	//Dao를 생성해서 
-	int num = Integer.parseInt(request.getParameter("Num"));
-	Member2DTO vo = Member2Dao.getDao().selectOne(num);
+	int num = Integer.parseInt(request.getParameter("num"));
+	Member2DTO vo = Member2Dao.getDao().detail(num);
 %>
 			<tr>
 				<th><%=vo.getNum() %></th>
