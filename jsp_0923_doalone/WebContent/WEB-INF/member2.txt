@@ -1,0 +1,14 @@
+create table member2(
+num number CONSTRAINT member2_num_pk PRIMARY KEY,
+id VARCHAR2(30) CONSTRAINT member2_id_nn not null,
+pwd VARCHAR2(10) CONSTRAINT member2_pwd_nn not null,
+name VARCHAR2(34),
+email VARCHAR2(45),
+age NUMBER(10),
+mdate DATE, 
+CONSTRAINT member2_id_uq UNIQUE(id)
+);
+
+create sequence member2_seq
+increment by 1
+start with 1;

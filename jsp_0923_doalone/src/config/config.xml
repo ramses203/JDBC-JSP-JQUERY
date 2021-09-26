@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"   "http://mybatis.org/dtd/mybatis-3-config.dtd">    <!--dtd는 밑에 환경설정의 엘리멘트들을 어떻게 만들어라라는 규약이다. -->
+  <configuration>	    <!-- 이부분은 mybatisPDF문서에서 2.1.2 Building SqlSessionFactory from XML 페이지참고해서 만들자 -->
+  	<environments default="">
+  		<environment id="">
+  			<transactionManager type="JDBC"/>
+  			<dataSource type="JNDI"> <!-- context.xml이 DB에 접속하는 정보를 가지고있는데  그 정보를 갖고오기 위해선 Resource의 name이 필요하다. 그name값을 가져오는 방식을 JNDI라고한다.-->
+  				<property name="data_source" value="java:comp/env/jdbc/myora"/>
+  			</dataSource>
+  		</environment>
+  	</environments>
+	
+	<mappers>  <!-- mapper를 작성해주기 위해선 데이터베이스에 테이블을 만들어주고 (테이블명)Map.xml을 먼저 작성해 줘야한다.  -->
+		<mapper/>
+	</mappers>
+
+
+  </configuration>

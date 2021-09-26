@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> <!-- mybatisPDF문서에서 2.1.5 Exploring Mapped SQL Statements페이지에서 가져온다. -->
+  <!-- 이 후로는 컨트롤+스페이스바를 잘 활용해 작성한다. -->
+  <mapper namespace="mem"> <!-- namespace가 뭔지 왜써야하는지 잘 모르겠다. -->
+  <insert id="add" parameterType="dto.Member2DTO"> <!-- insert부분을 작성하기 위해선 DTO를 먼저만들어야하는데 왜 먼저 만들어야하는지 모르겠다.-->
+  					<!-- insert의 id값은 알아보기 쉽게 적는다. -->
+  					<!--parameterType뭐냐면 insert,update,delete,select처럼 외부에서 SQL문으로 값을 받아와서 사용되는 구문들이 있는데(예를 들면 where절이 필요한 경우)그 받아 오는 값들의 타입을 지정해주는것이 parameterType이다.
+  					parameterType에 들어올수 있는 값에는  DTO, MAP, 일반자료형중 하나만 올 수있다  인자가 반드시 하나여야만 한다. 인자가 여러개일경우 객체형을 사용한다(DTO처럼) 
+  					parameterType작성방법은    "패키지명.dto의 클래스명" 이다.-->
+  insert into member2 values(member2_seq.nextVal, #{id}, #{pwd},#{name},#{email}, #{age}, sysdate) <!--;세미콜론 지우고 value값들을  dto.Member2DTO를 참고해서 #{변수}로 작성핟다. 작은따옴표도 지울것-->
+  </insert> 
+  <select id="list" resultType="dto.Member2DTO"> <!-- select는 결과값을 반환해줌으로 resultType을 써준다. -->
+  select num,id,name,mdate from member2 order by 1 desc
+  </select>
+  </mapper> 
+  
