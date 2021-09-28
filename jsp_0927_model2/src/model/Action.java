@@ -9,9 +9,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import controller.ActionForward;
-
+// 인터페이스의 구성은 상수, 추상메서드, default, static으로 구성되어있다. 
+// 인터페이스는 다중상속, 다중구현이 가능하다. 
 public interface Action {
-
+		//  Interface에서 model의 결과를 ActionForward의 반환형으로 ControllerServlet에게 전달해준다.그렇기 때문에 반환형은 ActionForward로 작성을 해준다. 
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException;
 	
 }
