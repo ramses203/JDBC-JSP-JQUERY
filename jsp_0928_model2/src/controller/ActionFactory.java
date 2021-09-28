@@ -5,6 +5,8 @@ import model.BoardFormModel;
 import model.ExamFormModel;
 import model.ExamModel;
 import model.IndexModel;
+import model.LoginModel;
+import model.memberFormModel;
 
 public class ActionFactory {
 
@@ -19,7 +21,9 @@ public class ActionFactory {
 		if(cmd.equals("index")) {
 			action = new IndexModel();
 		}else if(cmd.equals("loginForm")) {
-			action = new ExamModel();
+			action = new LoginModel();
+		}else if(cmd.equals("memberForm")) {
+			action = new memberFormModel();
 		}else if(cmd.equals("vfname")) {
 			action = new ExamFormModel();
 		}else if(cmd.equals("board")) {
