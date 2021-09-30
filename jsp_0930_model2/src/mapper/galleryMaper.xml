@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="gallery">
+  <insert id="add" parameterType="gvo">
+   insert into mygallery values(mygallery_seq.nextval, #{subject}, #{wid}, #{imgn}, #{cont}, #{reip}, sysdate)
+  </insert>
+  <select id="list" resultType="gvo">
+  select num, subject, wid, imgn, gdate from mygallery order by 1 desc
+  </select>
+  <select id="nlist" resultType="gvo" parameterType="int">
+  	<![CDATA[
+  	select num, imgn from (
+  	select rownum, num, imgn from mygallery
+  	order by 1 desc
+  ) where rownum <= #{rownum}
+  	]]>
+  </select>
+  </mapper>

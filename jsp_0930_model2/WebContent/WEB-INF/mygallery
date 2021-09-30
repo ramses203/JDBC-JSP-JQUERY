@@ -1,0 +1,12 @@
+create table mygallery(
+    num number constraint mygallery_num_pk primary key,
+    subject varchar2(100),
+    wid varchar2(50),
+    imgn varchar2 (100),
+    cont clob,
+    reip varchar2(30),
+    gdate date
+    );
+    create sequence mygallery_seq
+    increment by 1
+    start with 1;
