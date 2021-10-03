@@ -11,6 +11,7 @@ import model.login.LoginFormModel;
 import model.login.LoginProcess;
 import model.login.LogoutProcess;
 import model.member.MemberModel;
+import model.mypage.MyPageModel;
 
 public class ActionFactory {
 
@@ -38,6 +39,8 @@ public class ActionFactory {
 			action = new MyGalleryModel();
 		}else if(cmd.equals("galleryNotice")) {
 			action = new MyGalleryNoticeModel();
+		}else if(cmd.equals("myPage")) {
+			action = new MyPageModel();
 		}
 		return action;
 	}

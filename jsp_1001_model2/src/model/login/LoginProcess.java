@@ -27,29 +27,31 @@ public class LoginProcess implements Action{
 		Member2DTO vo = new Member2DTO();
 		vo.setId(request.getParameter("id"));
 		vo.setPwd(request.getParameter("pwd"));
-		
 		int cres = LoginDao.getDao().loginCheck(vo);
 		//if(dbidx.equals(vo.getId()) && dbpwdx.equals(vo.getPwd())) {
-		
-		String basePath = "main.kosmo?cmd=index";
-		if(cres > 0) {	
-		System.out.println("로그인 인증");
+		String basePath = "";
 			// 로그린 인증 후 세션을 저장
-			HttpSession session = request.getSession();
-			session.setAttribute("sessionID", vo.getId());
-			String subcmd = request.getParameter("subcmd");
+		if((cres > 0)) {	
+		HttpSession session = request.getSession();
+		session.setAttribute("sessionID", vo.getId());	
+		String subcmd = request.getParameter("subcmd");		
+			if((subcmd == null) || (subcmd == "")){
+			basePath = "main.kosmo?cmd=index";
+				
+			}else {
+			String viewName = request.getParameter("viewName");
+			int num = Integer.parseInt(request.getParameter("num"));
+			basePath = "main.kosmo?cmd="+subcmd+"&viewName="+viewName+"&num="+num;
 			
-			if(subcmd != null) {
-				String viewName = request.getParameter("viewName");
-				int num = Integer.parseInt(request.getParameter("num"));
-				basePath = "main.kosmo?cmd="+subcmd+"&viewName="+viewName+"&num="+num;
+			System.out.println("로그인 인증");
 			}
-			
+		
 		}else {
 			System.out.println("로그인 실패");
 		}
 		
 		return new ActionForward(basePath, true);
-	}
+	
 
+}
 }

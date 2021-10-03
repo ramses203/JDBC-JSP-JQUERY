@@ -78,11 +78,11 @@
 </script>
 </head>
 <body>
-   <h1>${sessionScope.sessionID }</h1>
+   <h3>현재 접속한 아이디는 ${sessionScope.sessionID } 입니다.</h3>
 	<div id="wrap">
 		<div id="navigation">
 			<ul>
-				<li><a href="index.jsp">Home</a></li>
+				<li><a href="main.kosmo?cmd=index">Home</a></li>
 				<c:choose>
 					<c:when test="${sessionScope.sessionID == null}">
 						<li><a href="main.kosmo?cmd=loginForm">로그인</a></li>
@@ -90,7 +90,7 @@
 					</c:when>
 					<c:otherwise>
 						<li><a href="main.kosmo?cmd=logoutProcess">로그아웃</a></li>
-						<li><a href="">마이페이지</a></li>
+						<li><a href="main.kosmo?cmd=myPage&viewName=myPageForm&id=${sessionScope.sessionID}">마이페이지</a></li>
 					</c:otherwise>
 				</c:choose>
 				<li><a href="main.kosmo?cmd=board&viewName=write">게시판</a></li>

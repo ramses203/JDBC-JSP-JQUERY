@@ -18,6 +18,8 @@
    <select id="detail" parameterType="int" resultType="mvo">
    select num,id,name,email,age,mdate from member2 where num = #{num}
    </select>
-   
+   <select id="mypage" parameterType="String" resultType="mvo">
+   select * from member2 where id = #{id}
+   </select>
   </mapper>
   

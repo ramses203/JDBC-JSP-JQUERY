@@ -22,9 +22,8 @@
 					style="width: 100px;"></td>
 				<td><c:choose>
 						<c:when test="${sessionScope.sessionID == null}">
-							<a
-								href="main.kosmo?cmd=loginForm&subcmd=gallery&viewName=galleryDetail&num=${vo.num }">
-								${vo.subject } </a>		
+							<a href="main.kosmo?cmd=loginForm&subcmd=gallery&viewName=galleryDetail&num=${vo.num }">
+								${vo.subject }</a>		
 						</c:when>
 						<c:otherwise>
 							<a href="main.kosmo?cmd=gallery&viewName=galleryDetail&num=${vo.num }">
@@ -40,15 +39,16 @@
 		<tr>
 			<th colspan="5">
 				<form action="main.kosmo" method="post">
-					<input type="hidden" name="cmd" value="gallery"> <input
-						type="hidden" name="viewName" value="galleryList"> <select
-						name="searchType">
+					<input type="hidden" name="cmd" value="gallery"> 
+					<input type="hidden" name="viewName" value="galleryList"> 
+					<select	name="searchType">
 						<option value="">검색타입</option>
 						<option value="1">제목</option>
 						<option value="2">내용</option>
 						<option value="3">아이디</option>
-					</select> <input type="text" name="searchValue"> <input
-						type="submit" value="검색">
+					</select> 
+					<input type="text" name="searchValue"> 
+					<input type="submit" value="검색">
 				</form>
 			</th>
 		</tr>

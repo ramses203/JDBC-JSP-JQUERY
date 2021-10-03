@@ -41,12 +41,18 @@ public class MemberModel implements Action{
 			vo.setAge(Integer.parseInt(request.getParameter("age")) );
 			vo.setEmail(request.getParameter("email"));
 			dao.insertMember(vo);
-			
 			views = "main.kosmo?cmd=index";
 			methods = true;
+		}else if(viewName.equals("memberUpdate")) {
 			
+			String idv = request.getParameter("idv");
+			System.out.println("idv :"+idv);
+			int res = Member2Dao.getDao().memberId(idv); 
+			
+			request.setAttribute("res", res);
+			views = "member/"+ viewName +".jsp"; 
+			methods = false;
 		}
-		
 		return new ActionForward(views, methods);
 	}
 	

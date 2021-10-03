@@ -16,7 +16,6 @@ public class MyGalleryModel implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		String viewName = request.getParameter("viewName");
-		System.out.println("ViewName:"+viewName);
 		String views = "";
 		boolean methods = false;
 		if (viewName.equals("galleryForm")) {

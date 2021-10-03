@@ -45,7 +45,7 @@ public class Member2Dao {
 	// resultest도 사라지고
 
 	public List<Member2DTO> listMember() {
-		SqlSession ss = SqlServiceFactory.getFactory().openSession(true);
+		SqlSession ss = SqlServiceFactory.getFactory().openSession();
 		List<Member2DTO> list = ss.selectList("mem.list");
 		ss.close();
 		return list;
@@ -57,11 +57,10 @@ public class Member2Dao {
 	      ss.close();
 	   }
 	  
-	  public Member2DTO detail(int num) {
-		  SqlSession ss = SqlServiceFactory.getFactory().openSession(true);//커넥션역할
-		  Member2DTO vo = ss.selectOne("mem.sel", num); // SQL구문 실행 (psmt)+ 결과값 가져오기(resultset) + 저장(vo.set)
+	  public Member2DTO myPage(String id) {
+		  SqlSession ss = SqlServiceFactory.getFactory().openSession();//커넥션역할
+		  Member2DTO vo = ss.selectOne("mem.mypage", id); // SQL구문 실행 (psmt)+ 결과값 가져오기(resultset) + 저장(vo.set)
 		  ss.close();
-		  
 		  return vo;
 	  }
 	  
