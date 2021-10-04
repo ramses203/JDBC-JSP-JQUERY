@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="target" class="basic01.MyMessage"></bean>
+<bean id="kor" class="basic01.KorMessage">
+<property name="message" ref="target"/>
+</bean>
+<bean id="eng" class="basic01.EngMessage">
+<property name="message" ref="target"/>
+</bean>
+</beans>

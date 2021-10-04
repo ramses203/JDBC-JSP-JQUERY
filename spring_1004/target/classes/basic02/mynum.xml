@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="target" class="basic02.MyNum"></bean>
+<bean id="num1" class="basic02.IntNum">
+<property name="mm" ref="target"/>
+</bean>
+<bean id="num2" class="basic02.IntNum2">
+<property name="mm" ref="target"/>
+</bean>
+
+</beans>
