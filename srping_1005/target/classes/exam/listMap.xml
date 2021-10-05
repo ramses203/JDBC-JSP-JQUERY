@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="listMap" class="exam.ListMap">
+<constructor-arg>
+	<list>
+		<map>
+			<entry key="email" value="aaa@naver.com"/>
+			<entry key="name" value="김길동"/>
+			<entry key="addr" value="서울 금천구 김길동"/>
+		</map>
+		<map>
+			<entry key="email" value="bbb@naver.com"/>
+			<entry key="name" value="둘리"/>
+			<entry key="addr" value="서울 금천구 둘리동"/>
+		</map>
+	</list>
+</constructor-arg>
+</bean>
+
+</beans>
