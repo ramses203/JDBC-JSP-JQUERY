@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+<bean id="myLogin" class="ex2.MyLogin"/>
+<bean id="beforeAdvice" class="ex2.MyBeforeAdvice">
+<property name="myLogin" ref="myLogin"/>
+</bean>
+<aop:config>
+	<aop:aspect id="before" ref="beforeAdvice"><!-- 구문을 외우기보다는 흐름을 알고있기 -->
+		<aop:pointcut expression="execution(* ex2.My*.use*(..))" id="befp"/>
+		<aop:before method="beforePwd" pointcut-ref="befp"/>
+		<!-- 1.AOP에 사용할 class에 지정하고(aspect) 2.필터를  만들고(pointcut) 
+		3.필터랑 AOP클래스를 결합(before) -->
+	
+	</aop:aspect>
+</aop:config>
+<bean id="kosmo" class="ex2.MyKosmo91"/>
+
+</beans>
