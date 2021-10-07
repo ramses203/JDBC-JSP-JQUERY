@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	<context:annotation-config />
+	<bean id="myPublic" class="ex1.MyPublic" autowire-candidate="false" />
+	<!-- Advice -->
+	<bean id="beforeAdvice" class="ex1.TodayBeforeAdvice" />
+	<bean id="checkAdvice" class="ex1.CheckAdvice"/>
+	<bean id="afterAdvice" class="ex1.NameReturnAdvice"/>
+	<bean id="afterthrowAdvice" class="ex1.AfterThrowAdvice"/>
+	<!-- Aop설정 : -->
+	<aop:config>
+		<aop:aspect id="before" ref="beforeAdvice">
+			<aop:pointcut expression="execution(* ex1.DaoImple.*(..))"
+				id="befP" />
+			<aop:before method="beforeToday" pointcut-ref="befP" />
+		</aop:aspect>
+		<aop:aspect id="time" ref="checkAdvice">
+			<aop:pointcut expression="execution(* ex1.DaoImple.first())" id="firstP"/>
+			<aop:around method="checkTime" pointcut-ref="firstP"/>
+		</aop:aspect>
+		<aop:aspect id="afterAdvice" ref="afterAdvice">
+			<aop:pointcut expression="execution(* ex1.DaoImple.second())" id="secondP"/>
+			<aop:after-returning method="myReturnMethod" pointcut-ref="secondP"
+			returning="ret"
+			/>
+		</aop:aspect>
+	<aop:aspect id="afeterThrow" ref="afterthrowAdvice">
+			<aop:pointcut
+				expression="execution(* ex1.DaoImple.third())" id="ThridP" />
+			<aop:after-throwing method="commThrow"
+				pointcut-ref="ThridP" throwing="ew" />
+	</aop:aspect>
+	</aop:config>
+	<bean id="dao" class="ex1.DaoImple" />
+</beans>
