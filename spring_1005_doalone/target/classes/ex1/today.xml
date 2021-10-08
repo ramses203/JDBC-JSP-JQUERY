@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="today" class="ex1.LocalToday" lazy-init="true">
+<property name="loc" value="가산"></property>
+<property name="name" value="홍길동"></property>
+</bean>
+
+
+<bean id="lazy" class="ex1.LazyBean" lazy-init="true">
+<property name="msg" value="안녕하세요"></property>
+</bean>
+</beans>
