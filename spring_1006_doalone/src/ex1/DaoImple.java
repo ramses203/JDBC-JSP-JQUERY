@@ -1,6 +1,7 @@
 package ex1;
 
 public class DaoImple implements DaoInter{
+
 	@Override
 	public void first() {
 		for(int i=0; i<10; i++){

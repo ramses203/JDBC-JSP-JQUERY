@@ -1,9 +1,10 @@
 package java01;
 
-public class MyMember {
+import java.io.Serializable;
+
+public class MyMember implements Serializable{
 	private String id;
 	private String name;
-	
 	public String getId() {
 		return id;
 	}
@@ -16,6 +17,5 @@ public class MyMember {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
 	
 }
