@@ -2,11 +2,16 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-<bean id="B" class="ex2.ResourcesB">
-<property name="uname" value="명건희"/>
-</bean>
-<bean id="MyT" class="ex2.MyTestA">
-<property name="b" ref="B"/>
+<bean id="list" class="ex5.Ex1_ListDemo">
+<constructor-arg>
+	<list>
+		<value>test1입니다.</value>	
+		<value>test2입니다.</value>	
+		<value>test3입니다.</value>	
+		<value>test4입니다.</value>	
+		<value>test5입니다.</value>	
+	</list>
+</constructor-arg>
 </bean>
 
 </beans>

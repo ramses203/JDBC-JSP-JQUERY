@@ -2,11 +2,14 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-<bean id="B" class="ex2.ResourcesB">
-<property name="uname" value="명건희"/>
-</bean>
-<bean id="MyT" class="ex2.MyTestA">
-<property name="b" ref="B"/>
+<bean id="collectionBean" class="ex5.CollectionBean">
+<property name="addressList">
+	<set value-type="java.lang.String">
+		<value>서울시 강남구 역삼동</value>
+		<value>서울시 강남구 성수동</value>
+		<value>서울시 강남구 성수동</value>
+	</set>
+</property>
 </bean>
 
 </beans>

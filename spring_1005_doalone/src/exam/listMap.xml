@@ -2,11 +2,17 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-<bean id="B" class="ex2.ResourcesB">
-<property name="uname" value="명건희"/>
-</bean>
-<bean id="MyT" class="ex2.MyTestA">
-<property name="b" ref="B"/>
+
+<bean id="listmap" class="exam.ListMap">
+	<constructor-arg>
+		<list>
+			<map>
+				<entry key="email" value="aaa@naver.com"/>
+				<entry key="name" value="김길동"/>
+				<entry key="addr" value="서울 금천구 김길동"/>
+			</map>
+		</list>
+	</constructor-arg>
 </bean>
 
 </beans>

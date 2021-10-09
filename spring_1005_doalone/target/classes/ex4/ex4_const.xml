@@ -2,11 +2,9 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-<bean id="B" class="ex2.ResourcesB">
-<property name="uname" value="명건희"/>
-</bean>
-<bean id="MyT" class="ex2.MyTestA">
-<property name="b" ref="B"/>
+<bean id="const" class="ex4.Ex1_Const">
+<constructor-arg value="1000" type="int"/>
+<constructor-arg value="원"/>
 </bean>
 
 </beans>

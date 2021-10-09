@@ -35,7 +35,12 @@ public class MyTestServlet extends HttpServlet {
 	//}
 	
 	protected void Spring(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ApplicationContext ctx = GenericXmlApplicationContext();
+		ApplicationContext ctx = new GenericXmlApplicationContext("ex2/mytest.xml");
+		MyTestA ref = ctx.getBean("MyT", MyTestA.class);
+		String res = ref.printUseb();
+		request.setAttribute("msg", res);
+		RequestDispatcher rd = request.getRequestDispatcher("today.jsp");
+		rd.forward(request, response);
 	}
 
 }
