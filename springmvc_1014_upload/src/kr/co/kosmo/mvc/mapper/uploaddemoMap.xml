@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="upload">
+<insert id="add" parameterType="upvo">
+insert into updemo values(updemo_seq.nextVal,#{id},#{uname},#{orifile},#{age},sysdate)
+</insert>
+
+<select id="list" resultType="upvo">
+select no, id, orifile, mdate from updemo order by 1 desc
+</select>
+
+<select id="detail" parameterType="int" resultType="upvo">
+select no, id, uname, orifile, age, mdate from updemo where no = #{no}
+</select>
+
+</mapper>
+
