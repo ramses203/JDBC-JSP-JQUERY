@@ -1,0 +1,10 @@
+create table updemo_sub(
+upno number constraint updemo_sub_upno_nn not null,
+img1 varchar2(100),
+mdate date,
+constraint updemo_sub_fk foreign key(upno)
+references updemo(no)on delete cascade);
+
+create sequence updemo_sub_seq
+increment by 1
+start with 1;
