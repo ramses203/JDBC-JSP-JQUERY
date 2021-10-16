@@ -13,7 +13,8 @@ public class UploadDemoVo {
 	private int age;
 	private String mdate;
 	private MultipartFile mfile;
-	
+
+	// upform2 멀티 파일 업로드 예제
 	private List<MultipartFile> mfile2;
 
 	public List<MultipartFile> getMfile2() {
@@ -23,7 +24,6 @@ public class UploadDemoVo {
 	public void setMfile2(List<MultipartFile> mfile2) {
 		this.mfile2 = mfile2;
 	}
-	
 
 	public MultipartFile getMfile() {
 		return mfile;

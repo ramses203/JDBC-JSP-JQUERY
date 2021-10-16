@@ -3,13 +3,13 @@ package kr.co.kosmo.mvc.dao;
 import java.util.List;
 import java.util.Map;
 
-import kr.co.kosmo.mvc.dto.UpdemoSubVo;
+import kr.co.kosmo.mvc.dto.UpdemoSubVO;
 import kr.co.kosmo.mvc.dto.UploadDemoVo;
 
 public interface UpDemoDaoInter {
+
 	public void addUp(UploadDemoVo vo);
 	public List<UploadDemoVo> getlist();
-	public List<Map<String, String>> getDetail(int no);
-	// ë°˜ë“œì‹œ foreachì˜ collection="list"
-	public void addSubUp(List<UpdemoSubVo> list);
+	public List<Map<String, String>> getDetil(int no);
+	public void addSubUp(List<UpdemoSubVO> list);// ¹İµå½Ã foreachÀÇ collection="list"
 }

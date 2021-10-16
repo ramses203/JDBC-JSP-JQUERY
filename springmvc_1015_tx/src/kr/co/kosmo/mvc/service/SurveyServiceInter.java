@@ -6,5 +6,6 @@ import kr.co.kosmo.mvc.dto.SurveyContentVO;
 import kr.co.kosmo.mvc.dto.SurveyVO;
 
 public interface SurveyServiceInter {
-	public void addSurveyAll(SurveyVO svo, List<SurveyContentVO> scvo);  
+
+	public void addSurveyAll(SurveyVO vo,List<SurveyContentVO> scvo);
 }

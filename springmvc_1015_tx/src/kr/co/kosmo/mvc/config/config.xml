@@ -6,6 +6,5 @@
  	<typeAliases>
  		<typeAlias type="kr.co.kosmo.mvc.dto.UploadDemoVo" alias="upvo"/>
  		<typeAlias type="kr.co.kosmo.mvc.dto.SurveyVO" alias="svo"/>
-		
  	</typeAliases>
  </configuration>

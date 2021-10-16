@@ -7,20 +7,18 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import kr.co.kosmo.mvc.dao.UpDemoDaoInter;
-import kr.co.kosmo.mvc.dto.UpdemoSubVo;
+import kr.co.kosmo.mvc.dto.UpdemoSubVO;
 import kr.co.kosmo.mvc.dto.UploadDemoVo;
-
 @Service
-//@Transactional
+@Transactional
 public class UpDemoServiceImple implements UpDemoServiceInter{
 	@Autowired
 	private UpDemoDaoInter upDemoDaoInter;
-
+	
 	@Override
-	public void addUpdemo(UploadDemoVo vo, List<UpdemoSubVo> scvo) {
+	public void addUpdemo(UploadDemoVo vo, List<UpdemoSubVO> suvo) {
 		upDemoDaoInter.addUp(vo);
-		upDemoDaoInter.addSubUp(scvo);
+		upDemoDaoInter.addSubUp(suvo);
 	}
-	
-	
+
 }

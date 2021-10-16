@@ -22,6 +22,5 @@
 			</p>
 		</form>
 	</fieldset>
-	
 </body>
 </html>

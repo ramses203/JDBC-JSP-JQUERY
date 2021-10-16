@@ -2,7 +2,7 @@
     pageEncoding="EUC-KR"%>
 <%@ include file="head.jsp" %>
 <div id="content">
-<h2>Test Main</h2>
+<h2>홈 화면입니다.</h2>
 </div>
 
 </div>

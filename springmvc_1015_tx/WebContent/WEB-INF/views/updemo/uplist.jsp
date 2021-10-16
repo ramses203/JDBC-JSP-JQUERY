@@ -15,10 +15,9 @@
 	<table>
 		<c:forEach var="e" items="${list }">
 			<tr>
-				<td>${e.no }</td>
-				<td><a href="updemoDetail?no=${e.no }"><img
-						src="${urlPath }/imgfile/${e.orifile }" style="width: 80px;"></a></td>
-				<td>${e.uname }</td>
+				<td>번호 : ${e.no }</td>
+				<td>이미지 : <a href="updemoDetail?no=${e.no }"><img src="${urlPath }/imgfile/${e.orifile }" style="width: 400px;"></a></td>
+				<td>이름 : ${e.uname }</td>
 			</tr>
 		</c:forEach>
 		<tr>

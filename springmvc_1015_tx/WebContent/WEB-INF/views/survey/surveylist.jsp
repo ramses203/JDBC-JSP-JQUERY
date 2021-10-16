@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="urlPath"
+	value="${pageContext.request.contextPath }/resources" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,16 +13,12 @@
 	<table>
 		<c:forEach var="e" items="${list }">
 			<tr>
-				<td>${e.num }</td>
-				<td>${e.sub }</td>
-				<td>${e.code }</td>
-				<td>${e.sdate }</td>
+				<td>번호 : <a href="surveyDetail?no=${e.num }">${e.num }</a></td>
+				<td>문자열 : ${e.sub }</td>
+				<td>code : ${e.code }</td>
+				<td>sdate : ${e.sdate }</td>
 			</tr>
 		</c:forEach>
-		
 	</table>
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	
 </body>
 </html>

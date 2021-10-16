@@ -2,6 +2,7 @@ package kr.co.kosmo.mvc.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -22,38 +23,44 @@ import kr.co.kosmo.mvc.service.SurveyServiceInter;
 public class SurveyController {
 	@Autowired
 	private SurveyInter surveyInter;
+	@Autowired
 	private SurveyServiceInter surveyServiceInter;
-	
+
 	@GetMapping("/survey")
 	public String surveyForm() {
 		return "survey/surveyForm";
 	}
-	
 	@PostMapping("/surveyInsert")
-	public ModelAndView surveyadd(SurveyVO vo, HttpServletRequest request) {
+	public ModelAndView surveyadd(SurveyVO vo,HttpServletRequest request) {
 		String[] surveytitle = request.getParameterValues("surveytitle");
-		List<SurveyContentVO> list = new ArrayList<SurveyContentVO>();
-		char stype = 'A';
-		for(String e : surveytitle) {
+		List<SurveyContentVO> list = new ArrayList<>();
+		char stype ='A';
+		for(String e:surveytitle) {
 			SurveyContentVO sv = new SurveyContentVO();
 			sv.setSurveytitle(e);
 			sv.setSurveycnt(0);
 			sv.setSubtype(String.valueOf(stype));
+			sv.setSubcode(vo.getNum());
 			list.add(sv);
 			stype++;
 		}
 		vo.setScvolist(list);
-		ModelAndView mav= new ModelAndView("redirect:surveylist");
+		ModelAndView mav = new ModelAndView("redirect:surveylist");
 		mav.addObject("vo", vo);
 		surveyServiceInter.addSurveyAll(vo, list);
 		return mav;
-	} 
-	
+	}
 	@RequestMapping("/surveylist")
 	public String surveyList(Model m) {
 		List<SurveyVO> list = surveyInter.listSurvey();
 		m.addAttribute("list", list);
 		return "survey/surveylist";
+	}
+	@GetMapping("/surveyDetail")
+	public String updetailList(Model m,int no) {
+		List<Map<String, String>> vo = surveyInter.getDetil(no);
+		m.addAttribute("vo", vo);
+		return "survey/detail";
 	}
 	
 }

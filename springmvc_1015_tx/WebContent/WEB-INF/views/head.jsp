@@ -32,6 +32,7 @@
 
 #content table, td, th {
 	border: 1px solid black;
+	
 }
 
 #content table {
@@ -83,11 +84,11 @@
 	<div id="wrap">
 		<div id="navigation">
 			<ul>
-				<li><a href="index.jsp">Home</a></li>
+				<li><a href="index">Home</a></li>
 				<c:choose>
 					<c:when test="${sessionScope.sessionID == null}">
 						<li><a href="loginForm">로그인</a></li>
-						<li><a href="memform">회원가입</a></li>
+						<li><a href="memberform">회원가입</a></li>
 					</c:when>
 					<c:otherwise>
 						<li><a href="logoutProcess">로그아웃</a></li>
@@ -98,7 +99,7 @@
 				<li><a href="main.kosmo?cmd=gallery&viewName=galleryList">겔러리</a></li>
 				<li><a href="mboardList">Model1Board</a></li>
 				<li><a href="updemoList">파일업로드</a></li>
-				<li><a href="survey">설문조사</a></li>
+				<li><a href="survey">surveyForm</a></li>
 			</ul>
 		</div>
 		<!-- 		<div id="bgx"></div> -->

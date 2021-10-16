@@ -15,16 +15,12 @@ import kr.co.kosmo.mvc.dto.SurveyVO;
 public class SurveyServiceImple implements SurveyServiceInter{
 	@Autowired
 	private SurveyInter surveyInter;
-
+	
 	@Override
-	public void addSurveyAll(SurveyVO svo, List<SurveyContentVO> scvo) {
-		surveyInter.addUp(svo);
+	public void addSurveyAll(SurveyVO vo, List<SurveyContentVO> scvo) {
+		surveyInter.addSurvey(vo);
 		surveyInter.addSurveyContent(scvo);
 	}
 
-	
-
-	
-	
 	
 }

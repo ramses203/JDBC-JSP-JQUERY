@@ -1,46 +1,56 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 <title>Insert title here</title>
 </head>
 <body>
-<form method="post" action="surveyInsert">
-	<table style="border-collapse: collapse; width: 450px; margin: auto;">
-		<thead>
-			<tr>
-				<th colspan="2" style="background: #ff9933">ì„¤ë¬¸ ì‘ì„± í¼</th></tr>
-		</thead>
-	<tbody>
-		<tr><th>ë²ˆí˜¸</th>
-			<td><input type="text" name="num" id="num"></td></tr>
-			<tr><th>ì œëª©</th>
-			<td><input type="text" name="sub" id="sub"></td></tr>
-			<tr><th>ë¬¸í•­ìˆ˜</th>
-			<td><input type="number" name="code" id="code" max="5" min="1" value="1" onchange="increTitle()"></td></tr>
-			<tr>
-			<td id="target" colspan="2">
-			</td></tr>
-	</tbody>
-	<tfoot>
-	<tr><th colspan="2"><input type="submit" value="send">&nbsp; 
-	<input type="button" value="list" onclick="location='surveylist'"></th></tr>
-	</tfoot>
-	</table>
-</form>
-<script type="text/javascript">
-	function increTitle() {
-		var code = parseInt(document.getElementById("code").value,"10");
-		console.log(code);
-		var html="";
-		for(var i=1; i<=code; i++){
-			html += "<th>ì„¤ë¬¸ë¬¸í•­"+i +"</th><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type=\"text\" name=\"surveytitle\" id=\"surveytitle\"></td><br>";
-		}
-		document.getElementById("target").innerHTML=html;
-	}
-</script>
 
+	<form action="surveyInsert" method="post">
+		<table style="border-collapse: collapse; width: 450px; margin: auto">
+			<thead>
+				<tr>
+					<td colspan="2" style="background: #ff9933">¼³¹® ÀÛ¼º Æû</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>¹øÈ£</td>
+					<td><input type="text" name="num" id="num"></td>
+				</tr>
+				<tr>
+					<td>Á¦¸ñ</td>
+					<td><input type="text" name="sub" id="sub"></td>
+				</tr>
+				<tr>
+					<td>¹®Ç×¼ö</td>
+					<td><input type="number" name="code" id="code" max="5" min="1"
+						value="1" onchange="increTitle()"></td>
+				</tr>
+				<tr>
+					<td id="target" colspan="2"></td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<th colspan="2"><input type="submit" value="send">&nbsp;<input
+						type="button" value="list" onclick="location='surveylist"></th>
+					</tr>
+			</tfoot>
+		</table>
+	</form>
+	<script>
+		function increTitle(){
+			var code = parseInt(document.getElementById("code").value,"10");
+			console.log(code);
+			var html ="";
+			for(var i=1;i<=code;i++){
+				html += "<th>¼³¹®¹®Ç×"+i+"</th><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type=\"text\" name=\"surveytitle\" id=\"surveytitle\"></td><br>";
+			}
+			document.getElementById("target").innerHTML=html;
+		}
+	</script>
 </body>
 </html>
