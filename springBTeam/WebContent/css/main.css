@@ -1,0 +1,46 @@
+@charset "EUC-KR";
+
+#wrap {
+	width: 800px;
+	margin: auto; /*중앙으로 배치가 된다.*/
+}
+
+#navigation {
+	padding-top:15px;
+	height: 35px;
+	background: #326df8;
+	color: #ffffff;
+	font-weight: bold;
+	clear: borth; /* float을 취소 한다.*/
+}
+
+#navigation  ul {
+	padding: 0;
+	margin: 0;
+}
+
+#navigation  ul  li {
+	display:block;
+	list-style: none;
+	float: left;
+	margin-left: 20px;
+}
+/*link style*/
+#navigation  ul  li a {
+	text-decoration: none; /*링크선 해제*/
+	color: #ffffff;
+	background: #ff3333;
+	padding: 3px;
+	margin: 2;
+}
+
+#navigation ul li a:hover { /*마우스를 올렸을 때 */
+	background: #666600;
+}
+#wrap > #bgx{
+	background-image: url('http://localhost:9100/jsp_1001_model2/img/bg1.jpg');
+	background-repeat:no-repeat;
+	width: 100%;
+	height: 260px;
+	background-color: red;
+}

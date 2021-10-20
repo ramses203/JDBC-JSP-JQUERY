@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"   "http://mybatis.org/dtd/mybatis-3-config.dtd">
+ <configuration>
+ <typeAliases>
+ 	<typeAlias type="kr.co.kosmo.mvc.dto.Member2DTO" alias="mvo"/>
+ 	<typeAlias type="kr.co.kosmo.mvc.dto.BoardDTO" alias="bvo"/>
+ 	<typeAlias type="kr.co.kosmo.mvc.dto.MygalleryDTO" alias="gvo"/>
+ </typeAliases>
+ 
+ 
+ </configuration>

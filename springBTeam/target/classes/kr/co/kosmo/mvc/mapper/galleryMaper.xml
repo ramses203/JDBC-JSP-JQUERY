@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="gallery">
+   <select id="add" parameterType="gvo">
+      insert into mygallery values(mygallery_seq.nextVal, #{subject} , #{wid} , #{imgn} , #{cont} , #{reip} , sysdate)
+   </select>
+   <select id="nlist" resultType="gvo" parameterType="int">
+      <![CDATA[
+      select num, imgn from (
+         select rownum, num, imgn from mygallery order by 2 desc
+      ) where rownum <= #{rownum}
+      ]]>
+   </select>
+   <select id="list" resultType="gvo">
+   select num, subject, wid, imgn, gdate from mygallery 
+   <if test="searchType != null">
+   <where>
+   <choose>
+      <when test="searchType == 1">subject like '%' #{searchValue } '%'</when>
+      <when test="searchType == 2">cont like '%' #{searchValue } '%'</when>
+      <when test="searchType == 3">wid=#{searchValue }</when>
+   </choose>
+   </where>
+   </if>
+    order by 1 desc
+   </select>
+   <select id="detail" parameterType="int" resultType="gvo">
+   select num, subject, wid, imgn, cont, gdate from mygallery where num=#{num}
+   </select>
+
+</mapper>
