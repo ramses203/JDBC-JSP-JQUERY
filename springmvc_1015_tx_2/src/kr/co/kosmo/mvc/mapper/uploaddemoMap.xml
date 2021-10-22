@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="upload">
+ 	<insert id="add" parameterType="upvo">
+ 		insert into updemo values(updemo_seq.nextVal,#{id},#{uname},#{orifile},#{age},sysdate)
+ 	</insert>
+ 	
+ 	<insert id="subAdd" parameterType="java.util.List">
+ 		<selectKey keyProperty="id" resultType="int" order="BEFORE">
+ 			select updemo_seq.currVal from dual
+ 		</selectKey>
+ 		<foreach collection="list" item="e" separator=" "
+ 		open="insert all" 
+ 		close="select * from dual">
+ 		into updemo_sub values(#{id},#{e.img1},sysdate)
+ 		</foreach>
+ 	</insert>
+ 	
+ 	<select id="list" resultType="upvo">
+ 		select no,id,orifile,mdate from updemo order by 1 desc
+ 	</select>
+ 	
+ 	<select id="detail" parameterType="int" resultType="hashmap">
+ 		select * from updemo upd, updemo_sub us where upd.no = us.upno and no=#{no}
+ 	</select>
+ 	
+ </mapper>
