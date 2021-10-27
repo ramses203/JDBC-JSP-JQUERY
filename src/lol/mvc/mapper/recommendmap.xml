@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="rec">
+	<select id="myinfo" parameterType="String" resultType="rvo">
+		select id as myId, line as myLine
+		from
+		(
+		select myuser.id, champ.line, count(play.puid) as record from myuser
+		join play
+		on myuser.id=play.puid
+		join champ
+		on champ.cname=play.pcname
+		where play.puid=#{myId}
+		group by myuser.id, champ.line
+		order by record desc
+		)
+		where rownum = 1
+	</select>
+	<select id="userinfo" parameterType="String" resultType="rvo">
+		select rownum as rnum, line as userLine, puid, pcname, score
+		from
+		(
+		select champ.line, play.puid, play.pcname,
+		(count(play.puid)+count(play.win)) as score
+		from champ join play
+		on
+		champ.cname = play.pcname
+		group by champ.line, play.puid, play.pcname
+		having champ.line=#{userLine}
+		order by score desc
+		)
+		where rownum between 1 and 3
+	</select>
+	
+	<select id="charrank" parameterType="String" resultType="rvo">
+	select line as userline, cname as pcname , round(winrate) as winrate, p.pcnt as picktotal, trunc(kill/death, 3) as KDratio
+from champ
+join
+(
+select g.pcname, rank() over(order by round(w.wcnt/g.gcnt*100)desc) as rank, w.wcnt/g.gcnt*100 as winrate
+from (select  pcname, count(pcname) as gcnt from play group by pcname) g
+join
+(select pcname, count(win) as wcnt from play where win='w' group by pcname) w
+on g.pcname = w.pcname
+group by g.pcname, w.wcnt, g.gcnt
+)
+on champ.cname = pcname
+join
+(select pcname, count(puid) as pcnt from play group by pcname order by pcnt desc) p
+on champ.cname = p.pcname
+join
+(select distinct pcname, sum(kill) over(partition by pcname)as kill, sum(death) over(partition by pcname) as death from play) kd
+on champ.cname = kd.pcname
+where line =#{userLine} and rownum between 1 and 3 
+order by winrate desc
+	</select>
+</mapper>

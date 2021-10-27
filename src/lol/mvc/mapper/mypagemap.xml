@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mypage">
+	<select id="champlist" resultType="hashmap"
+		parameterType="String">
+		select pcname as champ, count(pcname) as count from play
+		where puid=#{myid} group by pcname
+	</select>
+	<select id="datelist" resultType="hashmap"
+		parameterType="String">
+		  <![CDATA[
+      select round(NVL(wingame.cnt/decode(allgame.cnt,0,null,allgame.cnt)*100,0)) as cnt, allgame.gdate
+from (
+select TO_CHAR(b.dt, 'YY-MM') as gdate,nvl(sum(a.cnt),0)cnt
+from 
+( select TO_CHAR(gdate, 'YYYY-MM-DD') AS gdate
+    , COUNT(*) as cnt, puid
+    from v_play_days
+    where gdate between to_date('2021-01-01', 'YYYY-MM-DD')
+                and to_date('2021-12-31', 'YYYY-MM-DD')
+                group by gdate, puid
+                having puid= #{myid}
+) a
+,
+( select TO_DATE('21-01-01', 'YY-MM-DD') + LEVEL - 1 as dt
+    from dual
+    connect by level <= (to_date('21-12-31', 'YY-MM-DD')
+                        - to_date('21-01-01', 'YY-MM-DD')+1)
+            
+) b
+where b.dt = a.gdate(+) 
+group by TO_CHAR(b.dt, 'YY-MM')
+order by TO_CHAR(b.dt, 'YY-MM')
+) allgame
+join
+(
+select TO_CHAR(b.dt, 'YY-MM') as gdate ,nvl(sum(a.cnt),0)cnt
+from 
+( select TO_CHAR(gdate, 'YYYY-MM-DD') AS gdate
+    , COUNT(*) as cnt, puid
+    from v_play_days
+    where gdate between to_date('2021-01-01', 'YYYY-MM-DD')
+                and to_date('2021-12-31', 'YYYY-MM-DD')
+                group by gdate, puid, win
+                having puid=#{myid} and win='w'
+) a
+,
+( select TO_DATE('21-01-01', 'YY-MM-DD') + LEVEL - 1 as dt
+    from dual
+    connect by level <= (to_date('21-12-31', 'YY-MM-DD')
+                        - to_date('21-01-01', 'YY-MM-DD')+1)
+            
+) b
+where b.dt = a.gdate(+) 
+group by TO_CHAR(b.dt, 'YY-MM')
+order by TO_CHAR(b.dt, 'YY-MM')
+) wingame
+on allgame.gdate = wingame.gdate
+]]>
+
+	</select>
+	<select id="detaillist" resultType="hashmap" parameterType="pageVO">
+		select * from 
+ 		(
+ 		select rownum r_num, roomno, gdate, puid, pcname, piname, psname,kill, death, team, win
+        from(
+ 		select g.roomno, to_char(g.gdate,'yyyy-mm-dd') as gdate, p.puid, p.pcname,
+		p.piname, p.psname, p.kill, p.death, p.team, p.win
+		from
+		(select roomno, gdate from game
+        )
+ 		g
+       join
+		(select proomno, puid, pcname, piname, psname, kill, death, team, win from
+		play where puid=#{myid}
+		)p
+         on g.roomno = p.proomno
+        order by roomno desc
+        )
+        )
+ 		where r_num between #{start} and #{end} 
+	</select>
+	<select id="mytier" resultType="hashmap" parameterType="String">
+		select score, tier from myuser where id=#{myid}
+	</select>
+	<!-- 전체를 불러오지 말고 필요한 갯수만 불러오도록 -->
+	<select id="totalCnt" resultType="int" parameterType="String">
+		select count(*) as cnt
+		from
+		( select
+		g.roomno as proomno, to_char(g.gdate,'yyyy-mm-dd') as gdate,
+		p.puid, p.pcname,
+		p.piname, p.psname, p.kill, p.death, p.team, p.win
+		from
+		(select roomno, gdate from game
+		)g
+		join
+		(select proomno, puid,
+		pcname, piname, psname, kill, death, team, win from
+		play where
+		puid=#{myid}
+		)p
+		on g.roomno = p.proomno
+		order by gdate desc
+		)
+	</select>
+</mapper>
