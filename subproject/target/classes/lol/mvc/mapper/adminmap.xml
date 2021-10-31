@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="admin">
+	<select id="lastroom" resultType="int">
+		select max(roomno) from game
+	</select>
+	<insert id="insertgame" parameterType="gvo">
+		insert into game
+		values(game_seq.nextVal, #{roomno} , #{map},sysdate)
+	</insert>
+	<insert id="insertplay" parameterType="pvo">
+		insert into play
+		values(play_seq.nextVal, #{proomno}, #{puid}, #{pcname},
+		#{psname},
+		#{piname}, #{team}, #{win}, #{kill},#{death})
+	</insert>
+
+	<update id="updatescore" parameterType="pvo">
+		update myuser
+		set score =
+		score + (select sum (case when win='w' then
+		((10*kill)+(-5*death)) else
+		((5*kill)+(-10*death)) end)
+		from play where puid=#{puid} and proomno =
+		#{proomno})
+		where id=#{puid}
+	</update>
+
+	<update id="updatetier" parameterType="pvo">
+		update myuser set tier = (
+		select case
+		when score >= 4500 then 'master'
+		when score >= 3500 then 'platinum'
+		when score >= 2500 then 'gold'
+		when score >= 1500 then 'silver'
+		else 'bronze'
+		end as tire
+		from myuser
+		where id=#{puid}
+		)
+		where id=#{puid}
+	</update>
+	
+	<update id="updatezero">
+		  <![CDATA[update myuser set score=0 where score <=0]]>
+	</update>
+	
+	<select id="userlist" resultType="String">
+		select id from myuser order by id asc
+	</select>
+	<select id="itemlist" resultType="String">
+		select iname from item order by iname asc
+	</select>
+	<select id="skilllist" resultType="String">
+		select sname from skill order by sname asc
+	</select>
+	<select id="champlist" resultType="String">
+		select cname from champ order by cname asc
+	</select>
+</mapper>

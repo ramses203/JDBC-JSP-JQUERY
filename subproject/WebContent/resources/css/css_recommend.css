@@ -1,0 +1,55 @@
+.recommend_title2 { text-align: center; }
+
+#recommend {width: 80%;background: white; margin:0 auto 10px auto;border: 1px solid #444444; text-align: left; padding: 25px; }
+#recommend > div.recommend_detail2 > div.recommend_title { text-align: center; }
+#recommend > div.recommend_detail2 > table {width: 100%; border-collapse: collapse; text-align: center; margin: auto;  margin-bottom:25px; }
+#recommend > div.recommend_detail2 > table th {  border: 1px solid #444444; padding: 10px;width: 20%;}
+#recommend > div.recommend_detail2 > table td {  border: 1px solid #444444; padding: 10px;}
+#recommend > div.recommend_detail2 > table tr:nth-child(even){background-color: #f2f2f2;}
+#recommend > div.recommend_detail2 > table a { width:100%;}
+#recommend > div.recommend_detail2 > table div.center { display: inline-block; vertical-align: middle;}
+
+.line { width: 80%; margin: auto; text-align: center; margin-top:100px;}
+.line2 {border-bottom:1px solid #ccc; padding-bottom:50px;}
+.line3 {padding-top:50px; margin-top:0px;}
+.line #recommend_line { display:inline-block; width: 45%; background: white; margin:1%; text-align: left;  }
+.line #recommend_line > div.recommend_detail2 > div.recommend_title { text-align: center; }
+.line #recommend_line > div.recommend_detail2 > table {width: 100%; border-collapse: collapse; text-align: center; margin: auto;  }
+.line #recommend_line > div.recommend_detail2 > table th {  border: 1px solid #444444; padding: 10px; font-size: 13px;}
+.line #recommend_line > div.recommend_detail2 > table td {  border: 1px solid #444444; padding: 10px; font-size: 13px;}
+.line #recommend_line > div.recommend_detail2 > table tr:nth-child(even){background-color: #f2f2f2;}
+.line #recommend_line > div.recommend_detail2 > table a { width:100%;}
+.line #recommend_line > div.recommend_detail2 > table div.center { display: inline-block; vertical-align: middle;}
+
+
+
+#recommend {width: 80%;background: white; margin:0 auto 10px auto;border: 1px solid #444444; text-align: center; padding: 25px; }
+#recommend > div.recommend_detail > div.recommend_title { text-align: center; }
+#recommend > div.recommend_detail > div.linebox { display:inline-block; width: 44%; border-collapse: collapse; text-align: center; margin: 0.5%;  }
+#recommend > div.recommend_detail > div.linebox > table {width: 100%; border-collapse: collapse; text-align: center; margin: auto;  }
+#recommend > div.recommend_detail > div.linebox > table th {width: 20%;  border: 1px solid #444444; padding: 10px;}
+#recommend > div.recommend_detail > div.linebox > table td {  border: 1px solid #444444; padding: 10px;}
+#recommend > div.recommend_detail > div.linebox > table tr:nth-child(even){background-color: #f2f2f2;}
+#recommend > div.recommend_detail > div.linebox > table a { width:100%;}
+#recommend > div.recommend_detail > div.linebox > table div.center { display: inline-block; vertical-align: middle;}
+
+.line #recommend_line > div.recommend_detail > div.recommend_title { text-align: center; }
+.line #recommend_line > div.recommend_detail > table {width: 100%; border-collapse: collapse; text-align: center; margin: auto;  }
+.line #recommend_line > div.recommend_detail > table th {  border: 1px solid #444444; padding: 10px; font-size: 13px;}
+.line #recommend_line > div.recommend_detail > table td {  border: 1px solid #444444; color:black; padding: 10px; font-size: 13px;}
+.line #recommend_line > div.recommend_detail > table tr:nth-child(even){background-color: #f2f2f2;}
+.line #recommend_line > div.recommend_detail > table a { width:100%;}
+.line #recommend_line > div.recommend_detail > table div.center { display: inline-block; vertical-align: middle;} 
+
+h1.caption{    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    border-radius: 15px;
+    border: 0px;
+background-color: #6777ef !important;
+width:400px;
+    display: inline-block;
+    padding: 10px 5px; margin-bottom:20px;}
+
+.line input.id { border: 0px; background: none; cursor: pointer;}
+.line input.id:hover { border: 0px; background: none; cursor: pointer; color: #224abe; text-decoration: underline;}

@@ -1,0 +1,407 @@
+<class-diagram version="1.0.9" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true">  
+  <package id="1" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.controller" project="subproject" 
+    file="/subproject/src/lol/mvc/controller" binary="false">    
+    <position height="49" width="122" x="146" y="190"/>    
+    <display autosize="true" stereotype="true"/>  
+  </package>  
+  <interface id="2" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.dao.MyPageInter" project="subproject" 
+    file="/subproject/src/lol/mvc/dao/MyPageInter.java" binary="false">    
+    <position height="-1" width="-1" x="5615" y="600"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <class id="3" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.dto.MyLoginLoggerDTO" project="subproject" 
+    file="/subproject/src/lol/mvc/dto/MyLoginLoggerDTO.java" binary="false">    
+    <position height="435" width="135" x="308" y="190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="4" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.dto.SkillVO" project="subproject" 
+    file="/subproject/src/lol/mvc/dto/SkillVO.java" binary="false">    
+    <position height="282" width="137" x="483" y="190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <package id="5" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.config" project="subproject" 
+    file="/subproject/src/lol/mvc/config" binary="false">    
+    <position height="49" width="102" x="660" y="190"/>    
+    <display autosize="true" stereotype="true"/>  
+  </package>  
+  <class id="6" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.dto.MyUserVO" project="subproject" 
+    file="/subproject/src/lol/mvc/dto/MyUserVO.java" binary="false">    
+    <position height="537" width="146" x="802" y="190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <interface id="7" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.dao.MyUserSearchInter" project="subproject" 
+    file="/subproject/src/lol/mvc/dao/MyUserSearchInter.java" binary="false">    
+    <position height="-1" width="-1" x="6372" y="524"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <class id="8" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.dto.PageVO" project="subproject" 
+    file="/subproject/src/lol/mvc/dto/PageVO.java" binary="false">    
+    <position height="724" width="183" x="988" y="190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="9" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.dto.PlayVO" project="subproject" 
+    file="/subproject/src/lol/mvc/dto/PlayVO.java" binary="false">    
+    <position height="588" width="136" x="1211" y="190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <package id="10" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.mapper" project="subproject" 
+    file="/subproject/src/lol/mvc/mapper" binary="false">    
+    <position height="49" width="111" x="1387" y="190"/>    
+    <display autosize="true" stereotype="true"/>  
+  </package>  
+  <class id="11" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.controller.MyLoginController" project="subproject" 
+    file="/subproject/src/lol/mvc/controller/MyLoginController.java" binary="false">    
+    <position height="299" width="351" x="1708" y="190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="12" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.controller.DefaultController" project="subproject" 
+    file="/subproject/src/lol/mvc/controller/DefaultController.java" binary="false">    
+    <position height="129" width="130" x="1538" y="190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <interface id="13" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.dao.MyfriendInter" project="subproject" 
+    file="/subproject/src/lol/mvc/dao/MyfriendInter.java" binary="false">    
+    <position height="197" width="225" x="7062" y="954"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <class id="14" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.dao.LoginImple" project="subproject" 
+    file="/subproject/src/lol/mvc/dao/LoginImple.java" binary="false">    
+    <position height="231" width="187" x="2099" y="190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="15" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.controller.UserDetailController" 
+    project="subproject" file="/subproject/src/lol/mvc/controller/UserDetailController.java" binary="false">    
+    <position height="95" width="194" x="5259" y="190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="16" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.controller.MultiSearchController" 
+    project="subproject" file="/subproject/src/lol/mvc/controller/MultiSearchController.java" binary="false">    
+    <position height="95" width="200" x="2326" y="190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <package id="17" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.aop" project="subproject" 
+    file="/subproject/src/lol/mvc/aop" binary="false">    
+    <position height="49" width="99" x="2566" y="190"/>    
+    <display autosize="true" stereotype="true"/>  
+  </package>  
+  <class id="18" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.controller.RecommendController" 
+    project="subproject" file="/subproject/src/lol/mvc/controller/RecommendController.java" binary="false">    
+    <position height="95" width="186" x="4780" y="190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="19" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.controller.MyLogController" project="subproject" 
+    file="/subproject/src/lol/mvc/controller/MyLogController.java" binary="false">    
+    <position height="95" width="210" x="4003" y="190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="20" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.controller.MyFriendController" project="subproject" 
+    file="/subproject/src/lol/mvc/controller/MyFriendController.java" binary="false">    
+    <position height="163" width="279" x="6743" y="190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <package id="21" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.dto" project="subproject" 
+    file="/subproject/src/lol/mvc/dto" binary="false">    
+    <position height="49" width="99" x="2705" y="190"/>    
+    <display autosize="true" stereotype="true"/>  
+  </package>  
+  <class id="22" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.dto.ChampVO" project="subproject" 
+    file="/subproject/src/lol/mvc/dto/ChampVO.java" binary="false">    
+    <position height="435" width="131" x="2844" y="190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <interface id="23" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.dao.LoggingInter" project="subproject" 
+    file="/subproject/src/lol/mvc/dao/LoggingInter.java" binary="false">    
+    <position height="95" width="232" x="4253" y="954"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <class id="24" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.dto.ItemVO" project="subproject" 
+    file="/subproject/src/lol/mvc/dto/ItemVO.java" binary="false">    
+    <position height="384" width="126" x="3015" y="190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="25" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.dto.MyfriendVO" project="subproject" 
+    file="/subproject/src/lol/mvc/dto/MyfriendVO.java" binary="false">    
+    <position height="282" width="146" x="3181" y="190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="26" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.aop.LoginAdvice" project="subproject" 
+    file="/subproject/src/lol/mvc/aop/LoginAdvice.java" binary="false">    
+    <position height="95" width="215" x="4253" y="190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="27" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.dto.RecommendVO" project="subproject" 
+    file="/subproject/src/lol/mvc/dto/RecommendVO.java" binary="false">    
+    <position height="537" width="141" x="3367" y="190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <interface id="28" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.dao.RecommendInter" project="subproject" 
+    file="/subproject/src/lol/mvc/dao/RecommendInter.java" binary="false">    
+    <position height="112" width="213" x="4893" y="954"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <class id="29" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.controller.ErrorController" project="subproject" 
+    file="/subproject/src/lol/mvc/controller/ErrorController.java" binary="false">    
+    <position height="95" width="109" x="3548" y="190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="30" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.controller.MyPageController" project="subproject" 
+    file="/subproject/src/lol/mvc/controller/MyPageController.java" binary="false">    
+    <position height="95" width="276" x="5493" y="190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <package id="31" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.dao" project="subproject" 
+    file="/subproject/src/lol/mvc/dao" binary="false">    
+    <position height="49" width="99" x="3697" y="190"/>    
+    <display autosize="true" stereotype="true"/>  
+  </package>  
+  <class id="32" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.dao.MyUserSearchImple" project="subproject" 
+    file="/subproject/src/lol/mvc/dao/MyUserSearchImple.java" binary="false">    
+    <position height="112" width="245" x="6104" y="190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="33" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.dao.MyPageImple" project="subproject" 
+    file="/subproject/src/lol/mvc/dao/MyPageImple.java" binary="false">    
+    <position height="180" width="255" x="5809" y="190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="34" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.dao.RecommendImple" project="subproject" 
+    file="/subproject/src/lol/mvc/dao/RecommendImple.java" binary="false">    
+    <position height="146" width="213" x="5006" y="190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="35" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.controller.MyUserSearchController" 
+    project="subproject" file="/subproject/src/lol/mvc/controller/MyUserSearchController.java" binary="false">    
+    <position height="95" width="314" x="6389" y="190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="36" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.aop.loginChkAop" project="subproject" 
+    file="/subproject/src/lol/mvc/aop/loginChkAop.java" binary="false">    
+    <position height="95" width="198" x="7062" y="190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="37" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.dao.LoggingImple" project="subproject" 
+    file="/subproject/src/lol/mvc/dao/LoggingImple.java" binary="false">    
+    <position height="129" width="232" x="4508" y="190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="38" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.dto.GameVO" project="subproject" 
+    file="/subproject/src/lol/mvc/dto/GameVO.java" binary="false">    
+    <position height="282" width="127" x="3836" y="190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <interface id="39" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.dao.LoginInter" project="subproject" 
+    file="/subproject/src/lol/mvc/dao/LoginInter.java" binary="false">    
+    <position height="197" width="187" x="1904" y="954"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <class id="40" corner="BOTTOM_RIGHT" language="java" name="lol.mvc.dao.MyfriendImple" project="subproject" 
+    file="/subproject/src/lol/mvc/dao/MyfriendImple.java" binary="false">    
+    <position height="231" width="225" x="7300" y="190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <realization id="41">    
+    <end type="SOURCE" refId="37"/>    
+    <end type="TARGET" refId="23"/>  
+  </realization>  
+  <association id="42">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="43" name="myPageInter"/>      
+      <multiplicity id="44" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="45">    
+    <end type="SOURCE" refId="35" navigable="false">      
+      <attribute id="46" name="myUserSearchInter"/>      
+      <multiplicity id="47" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="48">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="39"/>  
+  </realization>  
+  <association id="49">    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="50" name="myPageInter"/>      
+      <multiplicity id="51" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="52">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="53" name="recommendInter"/>      
+      <multiplicity id="54" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="55">    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="28"/>  
+  </realization>  
+  <association id="56">    
+    <end type="SOURCE" refId="36" navigable="false">      
+      <attribute id="57" name="myfriendInter"/>      
+      <multiplicity id="58" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="59">    
+    <end type="SOURCE" refId="33"/>    
+    <end type="TARGET" refId="2"/>  
+  </realization>  
+  <realization id="60">    
+    <end type="SOURCE" refId="40"/>    
+    <end type="TARGET" refId="13"/>  
+  </realization>  
+  <association id="61">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="62" name="myfriendInter"/>      
+      <multiplicity id="63" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="64">    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="7"/>  
+  </realization>  
+  <association id="65">    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="66" name="loggingInter"/>      
+      <multiplicity id="67" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="68">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="69" name="loginInter"/>      
+      <multiplicity id="70" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="39" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="71">    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="72" name="loggingInter"/>      
+      <multiplicity id="73" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true"/>    
+    <operations public="true" package="true" protected="true" private="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

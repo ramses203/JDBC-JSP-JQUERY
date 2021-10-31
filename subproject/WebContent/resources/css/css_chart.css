@@ -1,0 +1,43 @@
+@charset "EUC-KR";
+
+
+#donutchart {
+	width: 50%; height: 400px; float: left;
+}
+
+#combochart {
+	width: 50%; height: 400px; float: left;
+}
+#curvechart {
+	width: 50%; height: 400px; float: left;
+}
+
+#title table{
+	border: 2px solid darkblue;  width: 400px; text-align: center; margin:10px auto;
+}
+
+#title table tr th.caption {
+	font-size: 32px; font-style: bold; color: darkblue;
+}
+
+#record {
+	border: 1px solid;  margin-left: auto; margin-right: auto; width: 80%;
+}
+#record table{
+	width: 100%; border-collapse: collapse; text-align: center; margin: auto;
+}
+#record table tr th {
+	font-size: 20px; text-align: center; border: 1px solid;
+}
+
+#record table th {  border: 1px solid #444444; padding: 10px;}
+#record table td {  border: 1px solid #444444; padding: 10px;}
+
+#rank table tr th {
+	font-size: 20px; font-weight: bold;
+}
+
+#rank table tr td.score{
+	font-size: 32px;
+}
+

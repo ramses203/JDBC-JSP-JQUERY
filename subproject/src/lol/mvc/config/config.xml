@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-config.dtd">
+ <configuration>
+ 	<typeAliases>
+ 		<typeAlias type="lol.mvc.dto.ChampVO" alias="chvo"/>
+ 		<typeAlias type="lol.mvc.dto.GameVO" alias="gvo"/>
+ 		<typeAlias type="lol.mvc.dto.ItemVO" alias="ivo"/>
+ 		<typeAlias type="lol.mvc.dto.MyUserVO" alias="mvo"/>
+ 		<typeAlias type="lol.mvc.dto.PlayVO" alias="pvo"/>
+ 		<typeAlias type="lol.mvc.dto.PageVO" alias="pagevo"/>
+ 		<typeAlias type="lol.mvc.dto.SkillVO" alias="svo"/>
+ 		<typeAlias type="lol.mvc.dto.MyfriendVO" alias="fvo"/>
+ 		<typeAlias type="lol.mvc.dto.MyLoginLoggerDTO" alias="lvo"/>
+ 		<typeAlias type="lol.mvc.dto.RecommendVO" alias="rvo" />
+ 	</typeAliases>
+ </configuration>

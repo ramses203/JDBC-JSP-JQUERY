@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="myfriend">
+	<select id="list" parameterType="String" resultType="hashmap">
+		select myfriend.friendid,(select tier from myuser where id =
+		myfriend.friendid) as tier , myfriend.addfriend
+		from myfriend
+		join myuser
+		on myfriend.myid = myuser.id
+		where myid=#{myid}
+
+	</select>
+	<insert id="friendrequest" parameterType="fvo">
+		insert into
+		myfriend values(myfriend_seq.nextVal,#{myid},#{friendid},'friendrequest')
+	</insert>
+	<insert id="friendresponse" parameterType="fvo">
+		insert into
+		myfriend values(myfriend_seq.nextVal,#{friendid},#{myid},'friendresponse')
+	</insert>
+	<select id="wait" parameterType="String" resultType="String">
+		select addfriend from myfriend where myid=#{myid}
+	</select>
+	<select id="respcnt" parameterType="String" resultType="String">
+		select count(addfriend) from myfriend where myid=#{myid} and addfriend =
+		'friendresponse'
+	</select>
+	<update id="requestfriend" parameterType="fvo">
+		update myfriend set addfriend = 'friend' where myid=#{myid} and
+		friendid=#{friendid}
+	</update>
+	<update id="responsefriend" parameterType="fvo">
+		update myfriend set addfriend = 'friend' where myid=#{friendid} and
+		friendid=#{myid}
+	</update>
+	<select resultType="String" parameterType="fvo" id="select">select
+		addfriend from myfriend where myid=#{myid} and friendid=#{friendid}
+	</select>
+</mapper>

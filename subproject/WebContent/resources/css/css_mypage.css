@@ -1,0 +1,164 @@
+@charset "EUC-KR";
+
+
+#donutchart {
+	width: 50%; height: 400px; float: left;
+}
+
+#combochart {
+	width: 50%; height: 400px; float: left;
+}
+#curvechart {
+	width: 50%; height: 400px; float: left;
+}
+
+#title table{
+	 width: 400px; text-align: center; margin:50px auto;
+}
+
+#title table tr th.caption {
+	font-size: 32px; font-weight: bold; color: white; border-radius:15px; border:0px;
+}
+
+#record {
+	border: 1px solid;  margin-left: auto; margin-right: auto; width: 80%;
+}
+#record table{
+	width: 100%; border-collapse: collapse; text-align: center; margin: auto;
+}
+#record table tr th {
+	font-size: 20px; text-align: center; border: 1px solid black;
+}
+
+#record table th {  border: 1px solid #444444; padding: 10px;}
+#record table td {  border: 1px solid #444444; padding: 10px;}
+
+#rank table tr th {
+	font-size: 20px; font-weight: bold;
+}
+
+#rank table tr td.score{
+	font-size: 32px;
+}
+
+.chart_all{width:95%; margin:0 auto; margin-top:50px;}
+
+
+/* 컨테이너 설정 */
+
+.container {display:flex;justify-content:center; flex-direction: row;}
+.inner-container {display:flex;flex-direction: column;width: 200px;text-align:center;margin-top:50px}
+
+/* 컨테이너 설정 */
+
+
+/* 툴팁 기본 스타일 설정 시작 */
+
+.tooltips {
+  position: relative;
+}
+
+.tooltips .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltips:hover .tooltiptext {
+  visibility: visible;
+}
+
+/* 툴팁 기본 스타일 설정 끝 */
+
+/* -------------------------- */
+
+/* 툴팁 화살표 기본 스타일 설정 시작 */
+
+.tooltips .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  border-style: solid;
+  border-width: 5px;
+}
+
+/* 툴팁 화살표 기본 스타일 설정 끝 */
+
+/* -------------------------- */
+
+/* 툴팁 방향 설정 시작 */
+
+/* 왼쪽 툴팁 시작 */
+
+.tooltips .tooltip-left {
+  top: -5px;
+  right: 105%;
+}
+
+.tooltips .tooltip-left::after {
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-color: transparent transparent transparent black;
+}
+
+/* 왼쪽 툴팁 끝 */
+
+/* 오른쪽 툴팁 시작 */
+
+.tooltips .tooltip-right {
+  top: -5px;
+  left: 105%;
+}
+
+.tooltips .tooltip-right::after {
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-color: transparent black transparent transparent;
+}
+
+/* 오른쪽 툴팁 끝 */
+
+/* 위쪽 툴팁 시작 */
+
+.tooltips .tooltip-top {
+  width: 120px;
+  bottom: 95%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltips .tooltip-top::after {
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-color: black transparent transparent transparent;
+}
+
+/* 아래쪽 툴팁 시작 */
+
+.tooltips .tooltip-bottom {
+  width: 120px;
+  top: 150%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+
+.tooltips .tooltip-bottom::after {
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-color: transparent transparent black transparent;
+}
+
+/* 아래쪽 툴팁 시작 */
+
+/* 툴팁 방향 설정 끝 */

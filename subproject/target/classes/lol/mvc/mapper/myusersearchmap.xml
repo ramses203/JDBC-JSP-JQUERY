@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="search">
+	<select id="search" parameterType="fvo" resultType="mvo">
+		select distinct myuser.id, myuser.uname, myuser.score , myuser.tier,
+		(select addfriend from myfriend where myid = #{myid} and friendid=myuser.id)as
+		addfriend
+		from myuser left join myfriend on myuser.id = myfriend.myid
+		where myuser.id like '%'||#{friendid}||'%' and not myuser.id =#{myid}
+	</select>
+</mapper>
